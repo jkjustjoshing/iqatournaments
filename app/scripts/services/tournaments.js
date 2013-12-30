@@ -11,6 +11,9 @@ angular.module('iqatournamentsApp')
       },
       getTournament: function(id) {
         return Restangular.one('tournaments', id).get();
+      },
+      getTournamentDetails: function(id) {
+        return Restangular.one('tournaments', id).one('details').get();
       }
     };
   });

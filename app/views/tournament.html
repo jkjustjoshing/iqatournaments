@@ -2,4 +2,16 @@
   <div class="name">{{tournament.name}}</div>
   <div class="location">{{tournament.location}}</div>
   <div class="date">{{tournament.date}}</div>
+
+  <ul class="teams">
+    <li ng-repeat="team in tournament.teams">
+      {{team.name}}
+    </li>
+  </ul>
+
+  <ul class="games">
+    <li ng-repeat="game in tournament.games">
+      {{game.teams[0].name}} is playing {{game.teams[1].name}} on pitch {{game.pitch}} with head ref {{game.headReferee.name}}
+    </li>
+  </ul>
 </div>
