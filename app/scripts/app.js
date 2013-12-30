@@ -16,11 +16,31 @@ angular.module('iqatournamentsApp', [
     var home = {
       name: 'home',
       url: '/',
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
+      templateUrl: 'views/layout.html',
+      controller: 'RootCtrl',
+      abstract: true
     };
 
-    $stateProvider.state(home);
+    var yo = {
+      name: 'yo',
+      url: '',
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      parent: home
+    };
+
+    var tournaments = {
+      name: 'tournaments',
+      url: 'tournaments',
+      templateUrl: 'views/tournamentList.html',
+      controller: 'TournamentListCtrl',
+      parent: home
+    };
+
+    $stateProvider
+      .state(home)
+      .state(yo)
+      .state(tournaments);
 
     RestangularProvider.setBaseUrl(iqatConfig.api);
 
