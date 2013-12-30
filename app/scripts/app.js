@@ -5,15 +5,23 @@ angular.module('iqatournamentsApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'restangular'
+  'restangular',
+  'ui.router'
 ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config(function ($stateProvider, $urlRouterProvider, RestangularProvider, iqatConfig) {
+
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise("/");
+
+    var home = {
+      name: 'home',
+      url: '/',
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    };
+
+    $stateProvider.state(home);
+
+    RestangularProvider.setBaseUrl(iqatConfig.api);
+
   });
