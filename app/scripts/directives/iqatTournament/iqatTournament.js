@@ -1,17 +1,19 @@
 'use strict';
 
 angular.module('iqatournamentsApp')
-  .directive('iqatTournament', function () {
+  .directive('iqatTournament', function ($state) {
     return {
-      template: '<div></div>',
-      scope: true,
-      require: 'iqatId',
-      restrict: 'A',
+      replace: true,
+      templateUrl: 'scripts/directives/iqatTournament/iqatTournament.html',
+      scope: {
+        tournament: '='
+      },
+      restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        Tournament.getTournament(scope.iqatId).then(function(tournament){
-          scope.tournament = tournament;
-        });
 
+        scope.viewTournament = function() {
+          $state.transitionTo('yo');
+        }
 
       }
     };
