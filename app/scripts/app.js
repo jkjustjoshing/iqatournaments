@@ -4,7 +4,8 @@ angular.module('iqatournamentsApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'restangular'
 ])
   .config(function ($routeProvider) {
     $routeProvider
