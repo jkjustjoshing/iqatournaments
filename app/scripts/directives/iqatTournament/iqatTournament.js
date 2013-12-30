@@ -12,8 +12,11 @@ angular.module('iqatournamentsApp')
       link: function postLink(scope, element, attrs) {
 
         scope.viewTournament = function() {
-          $state.transitionTo('yo');
-        }
+          console.log(scope.tournament.id);
+          $state.go('tournament', {
+            id: scope.tournament.id
+          });
+        };
 
       }
     };

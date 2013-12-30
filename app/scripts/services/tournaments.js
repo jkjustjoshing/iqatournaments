@@ -2,13 +2,15 @@
 
 angular.module('iqatournamentsApp')
   .factory('Tournaments', function (Restangular) {
-    // Service logic
-    // ...
+    var tournaments;
 
     // Public API here
     return {
       getTournaments: function () {
-        return Restangular.all('tournaments').getList();
+        return tournaments || Restangular.all('tournaments').getList();
+      },
+      getTournament: function(id) {
+        return Restangular.one('tournaments', id).get();
       }
     };
   });
