@@ -1,4 +1,4 @@
-<form ng-submit="submit()">
+<form name="newTournament" ng-submit="submit()">
   <h2> New Tournament </h2>
 
   <label>Tournament Name: </label><input ng-change="generateId()" ng-model="inputs.name" />
@@ -6,8 +6,8 @@
   <label>Director (future will be logged-in user): </label><input ng-model="inputs.director" />
   <label>Date (to be date input): </label><input ng-model="inputs.date" />
 
-  <label>url: http://iqatournaments.com/tournaments/</label><input ng-model="inputs.id" ng-change="idManuallyChanged()" ng-blur="idBlurred()" />
+  <label>url: http://iqatournaments.com/tournaments/</label><input name="id" ng-model="inputs.id" ng-change="idManuallyChanged()" ng-blur="idBlurred()" iqat-pattern="validId"/>
 
-  <input type="submit" />
+  <input type="submit" ng-disable="newTournament.id.$pristine || newTournament.id.$dirty && newTournament.id.$invalid" />
 
 </form>
