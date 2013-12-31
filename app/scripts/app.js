@@ -11,7 +11,7 @@ angular.module('iqatournamentsApp', [
   .config(function ($stateProvider, $urlRouterProvider, RestangularProvider, iqatConfig) {
 
     // For any unmatched url, redirect to /
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise('/');
 
     var home = {
       name: 'home',
@@ -45,10 +45,19 @@ angular.module('iqatournamentsApp', [
       parent: home
     };
 
+    var newTournament = {
+      name: 'tournaments.new',
+      url: 'tournaments/new',
+      templateUrl: 'views/newTournament.html',
+      controller: 'NewTournamentCtrl',
+      parent: home
+    };
+
     $stateProvider
       .state(home)
       .state(yo)
       .state(tournaments)
+      .state(newTournament)
       .state(tournament);
 
     RestangularProvider.setBaseUrl(iqatConfig.api);
