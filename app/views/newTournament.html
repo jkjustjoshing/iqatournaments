@@ -4,7 +4,7 @@
   <label>Tournament Name: </label><input ng-change="generateId()" ng-model="inputs.name" />
   <label>Location: </label><input ng-model="inputs.location" />
   <label>Director (future will be logged-in user): </label><input ng-model="inputs.director" />
-  <label>Date (to be date input): </label><input ng-model="inputs.date" />
+  <label>Date (to be date input): </label><input type="date" ng-model="inputs.date" />
 
   <label>url: http://iqatournaments.com/tournaments/</label><input name="id" ng-model="inputs.id" ng-change="idManuallyChanged()" ng-blur="idBlurred()" iqat-pattern="validId"/>
 
