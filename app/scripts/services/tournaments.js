@@ -12,8 +12,8 @@ angular.module('iqatournamentsApp')
       getTournament: function(alias) {
         return Restangular.one('tournaments', alias).get();
       },
-      getTournamentDetails: function(id) {
-        return Restangular.one('tournaments', id).one('details').get();
+      postTournament: function(data) {
+        return Restangular.all('tournaments').post(data);
       }
     };
   });
