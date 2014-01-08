@@ -8,27 +8,27 @@ angular.module('iqatournamentsApp')
       location: '',
       director: '',
       date: '',
-      id: ''
+      alias: ''
     };
 
-    $scope.validId = /^[a-z0-9\-]{3,}$/;
+    $scope.validAlias = /^[a-z0-9\-]{3,}$/;
 
-    $scope.generateId = function(){
+    $scope.generateAlias = function(){
 
-      if(!$scope.lockId){
-        $scope.inputs.id = $scope.inputs.name
+      if(!$scope.lockAlias){
+        $scope.inputs.alias = $scope.inputs.name
                .toLowerCase()
                .replace(/ /g, '')
                .replace(/[^a-z0-9\-]/g, '');
       }
     };
-    $scope.idManuallyChanged = function(){
-      $scope.lockId = $scope.inputs.id === undefined || $scope.inputs.id.length > 0;
+    $scope.aliasManuallyChanged = function(){
+      $scope.lockAlias = $scope.inputs.alias === undefined || $scope.inputs.alias.length > 0;
     };
 
-    $scope.idBlurred = function(){
-      if($scope.inputs.id !== undefined && $scope.inputs.id.length === 0){
-        $scope.generateId();
+    $scope.aliasBlurred = function(){
+      if($scope.inputs.alias !== undefined && $scope.inputs.alias.length === 0){
+        $scope.generateAlias();
       }
     };
 

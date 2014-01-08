@@ -9,8 +9,8 @@ angular.module('iqatournamentsApp')
       getTournaments: function () {
         return tournaments || Restangular.all('tournaments').getList();
       },
-      getTournament: function(id) {
-        return Restangular.one('tournaments', id).get();
+      getTournament: function(alias) {
+        return Restangular.one('tournaments', alias).get();
       },
       getTournamentDetails: function(id) {
         return Restangular.one('tournaments', id).one('details').get();

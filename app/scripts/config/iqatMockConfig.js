@@ -3,5 +3,5 @@
 // Mock API for testing purposes
 angular.module('iqatournamentsApp')
   .constant('iqatConfig', {
-    api: 'http://iqatournaments.apiary.io/'
+    api: 'http://localhost:3000'
   });
