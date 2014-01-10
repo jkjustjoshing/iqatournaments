@@ -8,7 +8,7 @@ angular.module('iqatournamentsApp', [
   'restangular',
   'ui.router'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, RestangularProvider, iqatConfig) {
+  .config(function ($locationProvider, $stateProvider, $urlRouterProvider, RestangularProvider, iqatConfig) {
 
     // For any unmatched url, redirect to /
     $urlRouterProvider.otherwise('/');
@@ -53,12 +53,34 @@ angular.module('iqatournamentsApp', [
       parent: home
     };
 
+    var login = {
+      name: 'login',
+      url: 'login',
+      templateUrl: 'views/login.html',
+      controller: 'LoginCtrl',
+      parent: home
+    };
+
+    var createAccount = {
+      name: 'createAccount',
+      url: 'createAccount',
+      templateUrl: 'views/createAccount.html',
+      controller: 'LoginCtrl',
+      parent: home
+    };
+
+    // Enable this when server is set up to respond to
+    // requests to all directories
+    //$locationProvider.html5Mode(true);
+
     $stateProvider
       .state(home)
       .state(yo)
       .state(tournaments)
       .state(newTournament)
-      .state(tournament);
+      .state(tournament)
+      .state(login)
+      .state(createAccount);
 
     RestangularProvider.setBaseUrl(iqatConfig.api);
 
