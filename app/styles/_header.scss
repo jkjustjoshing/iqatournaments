@@ -1,0 +1,25 @@
+header .user-nav {
+  width: 35%;
+  max-width: 450px;
+  min-width: 325px;
+  float: right;
+  margin-top: 10px;
+
+  .input-sm, {
+    float: left;
+    width: 39%;
+    margin-right: 1%;
+    padding: 5px;
+  }
+
+  .btn-sm {
+    float: left;
+    width: 20%
+  }
+
+  .info {
+    float: right;
+  }
+
+}
+ 

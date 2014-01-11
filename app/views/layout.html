@@ -1,5 +1,24 @@
-<header class="header">
-  IQA Tournaments
-  <a href="#/tournaments">Tournaments</a>
+<header class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">Home</a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="tournaments.new">Plan a Tournament</a></li>
+        <li><a ui-sref="tournaments">Find a Tournament</a></li>
+      </ul>
+
+      <iqat-user-nav></iqat-user-nav>
+
+  </div>
 </header>
-<div ui-view=""></div>
+<div class="container-fluid" ui-view=""></div>

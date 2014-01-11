@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('iqatournamentsApp')
-  .factory('Tournaments', function (Restangular) {
+  .factory('Tournaments', function (Restangular){//, Authenticate) {
     var tournaments;
 
     // Public API here

@@ -1,5 +1,10 @@
-<form class="login">
-  <input type="text" placeholder="email" ng-model="inputs.email" ng-require />
-  <input type="password" placeholder="password" ng-model="inputs.password" ng-require/>
-  <button type="submit" ng-submit="login()">Log in</button>
+<form class="login" ng-submit="login()">
+    
+  <label>Email Address</label>
+  <input type="text" placeholder="email" ng-model="inputs.email" ng-require ng-disabled="loginInProgress" />
+  
+  <label>Password</label>
+  <input type="password" placeholder="password" ng-model="inputs.password" ng-require ng-disabled="loginInProgress" />
+  
+  <button class="btn btn-default" type="submit">Log in</button>
 </form>
