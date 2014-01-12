@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('iqatournamentsApp')
-  .directive('iqatUserNav', function ($state, Authenticate) {
+  .directive('iqatUserNav', function ($state, Authenticate, banner) {
     return {
       replace: true,
       restrict: 'E',
@@ -19,7 +19,9 @@ angular.module('iqatournamentsApp')
         });
 
         scope.logout = function(){
-          Authenticate.logout();
+          Authenticate.logout().then(function(){
+            banner.success('You have successfully logged out.', 1000);
+          });
         }
         
       }

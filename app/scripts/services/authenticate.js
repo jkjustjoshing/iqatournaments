@@ -24,7 +24,7 @@ angular.module('iqatournamentsApp')
           function(response){
             // OK, logged in
             data = response;
-            deferred.resolve();
+            deferred.resolve(data);
           },
           function(error){
             // not ok
@@ -35,7 +35,7 @@ angular.module('iqatournamentsApp')
         return deferred.promise;
       },
       logout: function(){
-        Restangular.all('user').customPOST({}, 'logout').then(
+        return Restangular.all('user').customPOST({}, 'logout').then(
         function(){
           data = {};
         });

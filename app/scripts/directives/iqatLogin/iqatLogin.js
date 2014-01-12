@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('iqatournamentsApp')
-  .directive('iqatLogin', function ($state, Authenticate) {
+  .directive('iqatLogin', function ($state, Authenticate, banner) {
 
     var uniqueId = 0;
 
@@ -43,8 +43,9 @@ angular.module('iqatournamentsApp')
         scope.login = function() {
           //submit login info
           scope.loginInProgress = true;
-          Authenticate.login(scope.inputs.email, scope.inputs.password).then(function(){
+          Authenticate.login(scope.inputs.email, scope.inputs.password).then(function(user){
             // Login successful
+            banner.success(user.name + ', you are now logged in!');
             scope.loginInProgress = false;
           }, function(error){
             // Login failed, display error
