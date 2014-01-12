@@ -3,7 +3,7 @@
 
   <label>Tournament Name: </label><input ng-change="generateAlias()" ng-model="inputs.name" />
   <label>Location: </label><input ng-model="inputs.location" />
-  <label>Director (future will be logged-in user): </label><input ng-model="inputs.director" />
+  <label>Director (future will be logged-in user): </label><input ng-model="inputs.director" iqat-person-autocomplete />
   <label>Date (to be date input): </label><input type="date" ng-model="inputs.date" />
 
   <label>url: http://iqatournaments.com/tournaments/</label><input name="alias" ng-model="inputs.alias" ng-change="aliasManuallyChanged()" ng-blur="aliasBlurred()" iqat-pattern="validAlias"/>

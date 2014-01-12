@@ -6,7 +6,8 @@ angular.module('iqatournamentsApp', [
   'ngSanitize',
   'ngRoute',
   'restangular',
-  'ui.router'
+  'ui.router',
+  'ui.bootstrap'
 ])
   .config(function ($locationProvider, $stateProvider, $urlRouterProvider, RestangularProvider, iqatConfig) {
 
