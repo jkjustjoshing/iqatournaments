@@ -1,33 +1,50 @@
 'use strict';
 
 angular.module('iqatournamentsApp')
-  .factory('Authenticate', function ($q) {
+  .factory('Authenticate', function ($q, Restangular) {
 
-    var data;
+    var data = {};
+
+    Restangular.all('user').customGET('me').then(
+      function(response){
+        data = response;
+      });
 
     // Public API here
     return {
       login: function(email, password){
         var deferred = $q.defer();
 
-        // // Restangular.
-        // email = password;
+        var toPost = {
+          email: email,
+          password: password
+        };
 
-        setTimeout(function(){
-          user = email+password;
-          deferred.resolve();
-        }, 2000);
-
+        Restangular.all('user').customPOST(toPost, 'login').then(
+          function(response){
+            // OK, logged in
+            data = response;
+            deferred.resolve();
+          },
+          function(error){
+            // not ok
+            console.log(error);
+            deferred.reject();
+          });
+        
         return deferred.promise;
       },
       logout: function(){
-        user = null;
+        Restangular.all('user').customPOST({}, 'logout').then(
+        function(){
+          data = {};
+        });
       },
       isLoggedIn: function(){
-        return user !== null;
+        return !!data.name;
       },
       currentUser: function(){
-        return user;
+        return data.name;
       }
       
     };

@@ -2,6 +2,6 @@
     <iqat-login small ng-hide="isLoggedIn"></iqat-login>
     <div class="info" ng-show="isLoggedIn">
       User {{currentUser}}
-      <a href="#/logout">Logout</a>
+      <button ng-click="logout()">Logout</button>
     </div>
 </div>

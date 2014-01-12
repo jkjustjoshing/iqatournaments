@@ -83,8 +83,6 @@ angular.module('iqatournamentsApp', [
       .state(createAccount);
 
     RestangularProvider.setBaseUrl(iqatConfig.api);
-    RestangularProvider.setRequestInterceptor(function(ele, operation, model, url){
-      console.log(ele, operation, model, url);
-    });
+    RestangularProvider.setDefaultHttpFields({withCredentials: true});
 
   });

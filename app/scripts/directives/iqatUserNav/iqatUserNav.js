@@ -13,11 +13,14 @@ angular.module('iqatournamentsApp')
 
         scope.$watch( Authenticate.isLoggedIn, function ( isLoggedIn, oldValue ) {
           if ( isLoggedIn !== oldValue ) {
-          console.log(isLoggedIn);
             scope.isLoggedIn = isLoggedIn;
             scope.currentUser = Authenticate.currentUser();
           }
         });
+
+        scope.logout = function(){
+          Authenticate.logout();
+        }
         
       }
     };

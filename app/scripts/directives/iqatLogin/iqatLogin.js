@@ -36,8 +36,8 @@ angular.module('iqatournamentsApp')
 
 
         scope.inputs = {
-          email: '',
-          password: ''
+          email: 'josh@joshkra.me',
+          password: 'foopassword'
         };
 
         scope.login = function() {
