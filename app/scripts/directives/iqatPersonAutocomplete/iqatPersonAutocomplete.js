@@ -10,11 +10,13 @@ angular.module('iqatournamentsApp')
       link: function postLink(scope, element, attrs, controller) {
 
         scope.$watch(attrs.ngModel, function(newValue, oldValue){
-          if(attrs.iqatPersonAutocomplete === 'enforce'){
-            // We want to enforce having an actual person,
-            // so only set to valid if the person
-            // is an object with an id property (not a plain string)
-            controller.$setValidity('person', !!newValue.id);
+          if(newValue !== oldValue){
+            if(attrs.iqatPersonAutocomplete === 'enforce'){
+              // We want to enforce having an actual person,
+              // so only set to valid if the person
+              // is an object with an id property (not a plain string)
+              controller.$setValidity('person', !!newValue.id);
+            }
           }
         });
 
