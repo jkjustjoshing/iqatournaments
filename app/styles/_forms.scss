@@ -1,0 +1,32 @@
+$break-point: 600px;
+
+form.new-tournament {
+
+  border: 1px solid black;
+
+  .form-group {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+
+    input, label {
+      width: 100%;
+    }
+
+  }
+
+  @media all and (min-width: 35em) {
+    width: 35em;
+    margin-left: auto;
+    margin-right: auto;
+
+    .form-group {
+      input, label {
+        width: 40%;
+      }
+    }
+  }
+
+
+}
