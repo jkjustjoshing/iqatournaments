@@ -37,7 +37,7 @@ angular.module('iqatournamentsApp')
         name: $scope.inputs.name,
         location: $scope.inputs.location,
         date: $scope.inputs.date,
-        director: $scope.inputs.director,
+        director: $scope.inputs.director.id,
         alias: $scope.inputs.alias
       }).then(function(response) {
         console.log(response);
