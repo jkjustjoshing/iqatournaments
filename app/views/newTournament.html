@@ -1,11 +1,22 @@
-<form name="newTournament" ng-submit="submit()">
+<form class="form-horizontal" name="newTournament" ng-submit="submit()">
   <h2> New Tournament </h2>
 
-  <label>Tournament Name: </label><input ng-change="generateAlias()" ng-model="inputs.name" />
-  <label>Location: </label><input ng-model="inputs.location" />
-  <label>Director (future will be logged-in user): </label><input ng-model="inputs.director" iqat-person-autocomplete="enforce" />
-  <label>Date (to be date input): </label><input type="date" ng-model="inputs.date" />
-
+  <div class="form-group">
+    <label>Tournament Name:</label>
+    <input ng-change="generateAlias()" ng-model="inputs.name" />
+  </div>
+  <div class="form-group">
+    <label>Location:</label>
+    <input ng-model="inputs.location" />
+  </div>
+  <div class="form-group">
+    <label>Director (future will be logged-in user):</label>
+    <input ng-model="inputs.director" iqat-person-autocomplete="enforce" />
+  </div>
+  <div class="form-group">
+    <label>Date (to be date input):</label>
+    <input type="date" ng-model="inputs.date" />
+  </div>
   <label>url: http://iqatournaments.com/tournaments/</label><input name="alias" ng-model="inputs.alias" ng-change="aliasManuallyChanged()" ng-blur="aliasBlurred()" iqat-pattern="validAlias"/>
 
   <input type="submit" ng-disable="newTournament.id.$pristine || newTournament.id.$dirty && newTournament.id.$invalid" />
