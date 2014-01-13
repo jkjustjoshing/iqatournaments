@@ -50,7 +50,7 @@ angular.module('iqatournamentsApp')
           }, function(error){
             // Login failed, display error
             scope.loginInProgress = false;
-            scope.loginError = error;
+            banner.success('The server could not be reached. Please try again later.');
           });
 
 
