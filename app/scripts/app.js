@@ -14,20 +14,20 @@ angular.module('iqatournamentsApp', [
     // For any unmatched url, redirect to /
     $urlRouterProvider.otherwise('/');
 
-    var home = {
-      name: 'home',
+    var root = {
+      name: 'root',
       url: '/',
       templateUrl: 'views/layout.html',
       controller: 'RootCtrl',
       abstract: true
     };
 
-    var yo = {
-      name: 'yo',
+    var home = {
+      name: 'home',
       url: '',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',
-      parent: home
+      parent: root
     };
 
     var tournaments = {
@@ -35,7 +35,7 @@ angular.module('iqatournamentsApp', [
       url: 'tournaments',
       templateUrl: 'views/tournamentList.html',
       controller: 'TournamentListCtrl',
-      parent: home
+      parent: root
     };
 
     var tournament = {
@@ -43,7 +43,7 @@ angular.module('iqatournamentsApp', [
       url: 'tournaments/:id',
       templateUrl: 'views/tournament.html',
       controller: 'TournamentCtrl',
-      parent: home
+      parent: root
     };
 
     var newTournament = {
@@ -51,7 +51,7 @@ angular.module('iqatournamentsApp', [
       url: 'tournaments/new',
       templateUrl: 'views/newTournament.html',
       controller: 'NewTournamentCtrl',
-      parent: home
+      parent: root
     };
 
     var login = {
@@ -59,15 +59,40 @@ angular.module('iqatournamentsApp', [
       url: 'login',
       templateUrl: 'views/login.html',
       controller: 'LoginCtrl',
-      parent: home
+      parent: root
     };
+
+    var teams = {
+      name: 'teams',
+      url: 'teams',
+      templateUrl: 'views/teamList.html',
+      controller: 'TeamListCtrl',
+      parent: root
+    };
+
+    var team = {
+      name: 'team',
+      url: 'teams/:id',
+      templateUrl: 'views/team.html',
+      controller: 'TeamCtrl',
+      parent: root
+    };
+
+    var newTeam = {
+      name: 'teams.new',
+      url: 'teams/new',
+      templateUrl: 'views/newTeam.html',
+      controller: 'NewTeamCtrl',
+      parent: root
+    };
+
 
     var createAccount = {
       name: 'createAccount',
       url: 'createAccount',
       templateUrl: 'views/createAccount.html',
       controller: 'LoginCtrl',
-      parent: home
+      parent: root
     };
 
     // Enable this when server is set up to respond to
@@ -75,12 +100,15 @@ angular.module('iqatournamentsApp', [
     //$locationProvider.html5Mode(true);
 
     $stateProvider
+      .state(root)
       .state(home)
-      .state(yo)
       .state(tournaments)
       .state(newTournament)
       .state(tournament)
       .state(login)
+      .state(teams)
+      .state(newTeam)
+      .state(team)
       .state(createAccount);
 
     RestangularProvider.setBaseUrl(iqatConfig.api);
