@@ -14,6 +14,22 @@ angular.module('iqatournamentsApp')
       },
       postTeam: function(data) {
         return Restangular.all('teams').post(data);
+      },
+      findTeams: function(searchTerm){
+
+        var deferred = $q.defer();
+
+        Restangular.all('teams').customGET('search', {name: searchTerm}).then(
+          function(response){
+            // OK
+            deferred.resolve(response);
+          },
+          function(){
+            // not ok
+            deferred.reject();
+          });
+
+        return deferred.promise;
       }
     };
   });

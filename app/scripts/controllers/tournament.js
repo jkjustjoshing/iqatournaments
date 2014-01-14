@@ -7,4 +7,8 @@ angular.module('iqatournamentsApp')
       $scope.tournament = tournament;
     });
 
+    $scope.addTeam = function() {
+      // Add the team to the tournament
+    };
+
   });

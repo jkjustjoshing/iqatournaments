@@ -3,15 +3,26 @@
   <div class="location">{{tournament.location}}</div>
   <div class="date">{{tournament.date}}</div>
 
-  <ul class="teams">
-    <li ng-repeat="team in tournament.teams">
-      {{team.name}}
-    </li>
-  </ul>
+  <div class="teams">
+    <h3>Teams</h3>
+    <ul>
+      <li ng-repeat="team in tournament.teams">
+        {{team.name}}
+      </li>
+      <li>
+        <form ng-submit="addTeam()">
+          <input placeholder="Add a team..." ng-model="team.new" iqat-autocomplete="enforce" autocomplete-model="persons" />
+        </form>
+      </li>
+    </ul>
+  </div>
 
-  <ul class="games">
-    <li ng-repeat="game in tournament.games">
-      {{game.teams[0].name}} is playing {{game.teams[1].name}} on pitch {{game.pitch}} with head ref {{game.headReferee.name}}
-    </li>
-  </ul>
+  <div class="games">
+    <h3>Games</h3>
+    <ul>
+      <li ng-repeat="game in tournament.games">
+        {{game.teams[0].name}} is playing {{game.teams[1].name}} on pitch {{game.pitch}} with head ref {{game.headReferee.name}}
+      </li>
+    </ul>
+  </div>
 </div>

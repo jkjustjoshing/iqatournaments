@@ -5,7 +5,7 @@ angular.module('iqatournamentsApp')
 
     // Public API here
     return {
-      getPersons: function(searchTerm){
+      findPersons: function(searchTerm){
 
         var deferred = $q.defer();
 
