@@ -39,8 +39,8 @@ angular.module('iqatournamentsApp', [
     };
 
     var tournament = {
-      name: 'tournament',
-      url: 'tournaments/:id',
+      name: 'tournaments.alias',
+      url: '^/tournaments/:alias',
       templateUrl: 'views/tournament.html',
       controller: 'TournamentCtrl',
       parent: root

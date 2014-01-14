@@ -11,6 +11,11 @@ angular.module('iqatournamentsApp')
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
 
+        scope.tournament.href = $state.href('tournaments.alias', {
+          alias: scope.tournament.alias
+        });
+        // element.attr('href', href);
+
         scope.viewTournament = function() {
           console.log(scope.tournament.alias);
           $state.go('tournament', {

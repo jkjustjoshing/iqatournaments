@@ -1,5 +1,7 @@
 <div class="tournament">
-  <div class="name" ng-click="viewTournament()">{{tournament.name}}</div>
+  <a ng-href="{{tournament.href}}">
+    <div class="name">{{tournament.name}}</div>
+  </a>
   <div class="location">{{tournament.location}}</div>
   <div class="date">{{tournament.date}}</div>
 </div>
