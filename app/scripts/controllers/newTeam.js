@@ -1,14 +1,11 @@
 'use strict';
 
 angular.module('iqatournamentsApp')
-  .controller('NewTournamentCtrl', function ($scope, Tournaments){//, Tournaments, $state) {
+  .controller('NewTeamCtrl', function ($scope, Teams){//, Tournaments, $state) {
 
     $scope.inputs = {
       name: '',
-      location: '',
-      director: '',
-      date: '',
-      alias: ''
+      captain: ''
     };
 
     $scope.validAlias = /^[a-z0-9\-]{3,23}$/;
@@ -33,11 +30,9 @@ angular.module('iqatournamentsApp')
     };
 
     $scope.submit = function(){
-      Tournaments.postTournament({
+      Teams.postTeam({
         name: $scope.inputs.name,
-        location: $scope.inputs.location,
-        date: $scope.inputs.date,
-        director: $scope.inputs.director.id,
+        captain: $scope.inputs.captain.id,
         alias: $scope.inputs.alias
       }).then(function(response) {
         console.log(response);
