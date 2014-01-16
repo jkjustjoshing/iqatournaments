@@ -10,7 +10,7 @@ angular.module('iqatournamentsApp')
       link: function postLink(scope, element, attrs, controller) {
 
         var searchMethod;
-        if(attrs.autocompleteModel.indexOf('person') !== -1){
+        if(attrs.autocompleteModel.indexOf('person') !== -1 || attrs.autocompleteModel.indexOf('member') !== -1){
           searchMethod = Persons.findPersons;
         }else if(attrs.autocompleteModel.indexOf('team') !== -1){
           searchMethod = Teams.findTeams;

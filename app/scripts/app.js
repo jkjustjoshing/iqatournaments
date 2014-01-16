@@ -71,8 +71,8 @@ angular.module('iqatournamentsApp', [
     };
 
     var team = {
-      name: 'team',
-      url: 'teams/:id',
+      name: 'teams.alias',
+      url: '^/teams/:alias',
       templateUrl: 'views/team.html',
       controller: 'TeamCtrl',
       parent: root

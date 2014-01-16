@@ -1,4 +1,18 @@
 <div class="team details">
   <div class="name">{{team.name}}</div>
-  <div class="captain">{{team.captain}}</div>
+  <div iqat-person="team.captain"></div>
+
+  <div class="players">
+    <h3>Players</h3>
+    <ul 
+       iqat-add-list="team.members" 
+       view-attr="name" 
+       placeholder="Add a player..."
+       model="members"
+       parent="team"
+       add-method="addMember"
+       >
+    </ul>
+  </div>
+
 </div>

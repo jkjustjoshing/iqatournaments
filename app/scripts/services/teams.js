@@ -30,6 +30,9 @@ angular.module('iqatournamentsApp')
           });
 
         return deferred.promise;
+      },
+      addMember: function(team, person){
+        return team.post('members', {id: person.id});
       }
     };
   });

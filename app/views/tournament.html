@@ -5,15 +5,14 @@
 
   <div class="teams">
     <h3>Teams</h3>
-    <ul>
-      <li ng-repeat="team in tournament.teams">
-        {{team.name}}
-      </li>
-      <li>
-        <form ng-submit="addTeam()">
-          <input placeholder="Add a team..." ng-model="team.new" iqat-autocomplete="enforce" autocomplete-model="team" />
-        </form>
-      </li>
+    <ul 
+       iqat-add-list="tournament.teams" 
+       view-attr="name" 
+       placeholder="Add a team..."
+       model="teams"
+       parent="tournament"
+       add-method="addTeam"
+       >
     </ul>
   </div>
 

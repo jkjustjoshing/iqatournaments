@@ -1,0 +1,10 @@
+<ul>
+  <li ng-repeat="model in models">
+    {{model.name}}
+  </li>
+  <li>
+    <form ng-submit="addModel()">
+      <input placeholder="{{placeholder}}" ng-model="new" iqat-autocomplete="enforce" autocomplete-model="{{model}}" />
+    </form>
+  </li>
+</ul>

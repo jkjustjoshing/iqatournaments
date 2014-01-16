@@ -1,7 +1,11 @@
 <ul>
   <li ng-repeat="team in teams">
-    {{ team.captain.name }}, {{ team.name }}
-    <!--iqat-team team='team'></iqat-team -->
+    <div class="team">
+      <a ng-href="{{team.href}}">
+        <div class="name">{{team.name}}</div>
+      </a>
+      <div iqat-person="team.captain"></div>
+    </div>
   </li>
   <li><a ui-sref=".new">Create a new team</a>
 </ul>
