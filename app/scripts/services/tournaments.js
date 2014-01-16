@@ -14,6 +14,9 @@ angular.module('iqatournamentsApp')
       },
       postTournament: function(data) {
         return Restangular.all('tournaments').post(data);
+      },
+      addTeam: function(tournament, team){
+        return tournament.post('teams', {alias: team.alias});
       }
     };
   });

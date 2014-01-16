@@ -7,7 +7,7 @@
   </div>
   <div class="form-group">
     <label>Captain (future will be logged-in user): </label>
-    <input ng-model="inputs.captain" iqat-person-autocomplete="enforce" />
+    <input ng-model="inputs.captain" iqat-autocomplete="enforce" autocomplete-model="person" />
   </div>
 
   <label>url: http://iqatournaments.com/teams/</label><input name="alias" ng-model="inputs.alias" ng-change="aliasManuallyChanged()" ng-blur="aliasBlurred()" iqat-pattern="validAlias"/>
