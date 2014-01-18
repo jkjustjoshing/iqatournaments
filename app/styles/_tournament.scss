@@ -1,22 +1,48 @@
-.tournament {
+.tournament.details {
+
+  max-width: 45em;
+  margin: 0 auto;
 
   .name {
-    font-size: 1.2em;
-    display: inline-block;
+    font-size: 2.5em;
   }
 
-  .location {
+  .name, .location, .date {
+    text-align: center;
+  }
 
-    &::before {
-      content: ' - ';
-      display: inline-block;
+  .teams, .games {
+
+    h3 {
+      font-size: 2em;
+      text-align: center;
     }
 
-    display: inline-block;
   }
 
 }
 
 .ng-invalid {
   border-color: red;
+}
+
+.games {
+
+  .modal-background {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+  }
+
+  .new-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+  }
+
 }

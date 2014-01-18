@@ -1,0 +1,43 @@
+<div class="modal-background"></div>
+
+<form class="new-form form-horizontal" name="newGame" ng-submit="submit()">
+  <h2> New Game </h2>
+
+  <div class="form-group">
+    <label>Pitch:</label>
+    <input ng-model="inputs.pitch" />
+  </div>
+  <div class="form-group">
+    <label>Team 1 (for some reason searches people):</label>
+    <input ng-model="inputs.team1" iqat-autocomplete="enforce" autocomplete-model="team" />
+  </div>
+  <div class="form-group">
+    <label>Team 2 (for some reason searches people):</label>
+    <input ng-model="inputs.team2" iqat-autocomplete="enforce" autocomplete-model="team" />
+  </div>
+  <div class="form-group">
+    <label>Head Referee:</label>
+    <input ng-model="inputs.headReferee" iqat-autocomplete="enforce" autocomplete-model="person" />
+  </div>
+  <div class="form-group">
+    <label>Snitch:</label>
+    <input ng-model="inputs.snitch" iqat-autocomplete="enforce" autocomplete-model="person" />
+  </div>
+  <div class="form-group">
+    <label>Start Time (to be time input):</label>
+    <input type="text" ng-model="inputs.startTime" />
+  </div>
+
+  <ul 
+       iqat-add-list="game.assistantReferees" 
+       view-attr="name" 
+       placeholder="Add an assistant ref..."
+       model="assistantReferees"
+       parent="game"
+       add-method="addAssistantReferee"
+       >
+    </ul>
+
+  <input type="submit" ng-disable="newTournament.id.$pristine || newTournament.id.$dirty && newTournament.id.$invalid" />
+
+</form>

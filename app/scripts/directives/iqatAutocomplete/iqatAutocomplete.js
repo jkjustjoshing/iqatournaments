@@ -17,6 +17,7 @@ angular.module('iqatournamentsApp')
         }else{
           console.error('iqaAutocomplete directive MUST specify what model to search among those allowed.');
         }
+        console.log(attrs);
 
 
         scope.$watch(attrs.ngModel, function(newValue, oldValue){

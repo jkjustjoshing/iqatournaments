@@ -1,0 +1,29 @@
+<div class="tournament details">
+  <h2 class="name">{{tournament.name}}</h2>
+  <div class="location">{{tournament.location}}</div>
+  <div class="date">{{tournament.date}}</div>
+
+  <div class="teams">
+    <h3>Teams</h3>
+    <ul 
+       iqat-add-list="tournament.teams" 
+       view-attr="name" 
+       placeholder="Add a team..."
+       model="teams"
+       parent="tournament"
+       add-method="addTeam"
+       >
+    </ul>
+  </div>
+
+  <div class="games">
+    <h3>Games</h3>
+    <a href="javascript:void(0)" ng-click="newGame()">New Game</a>
+    <div ui-view=""></div>
+    <ul>
+      <li ng-repeat="game in tournament.games">
+        {{game.teams[0].name}} is playing {{game.teams[1].name}} on pitch {{game.pitch}} with head ref {{game.headReferee.name}}
+      </li>
+    </ul>
+  </div>
+</div>

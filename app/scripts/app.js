@@ -31,7 +31,7 @@ angular.module('iqatournamentsApp', [
     };
 
     var tournaments = {
-      name: 'tournaments',
+      name: 'tournaments.list',
       url: 'tournaments',
       templateUrl: 'views/tournamentList.html',
       controller: 'TournamentListCtrl',
@@ -39,11 +39,19 @@ angular.module('iqatournamentsApp', [
     };
 
     var tournament = {
-      name: 'tournaments.alias',
+      name: 'tournaments',
+      abstract: true,
       url: '^/tournaments/:alias',
       templateUrl: 'views/tournament.html',
-      controller: 'TournamentCtrl',
       parent: root
+    };
+
+    var tournamentView = {
+      name: 'tournaments.alias',
+      url: '',
+      templateUrl: 'views/tournamentView.html',
+      controller: 'TournamentViewCtrl',
+      parent: tournament
     };
 
     var newTournament = {
@@ -51,6 +59,14 @@ angular.module('iqatournamentsApp', [
       url: 'tournaments/new',
       templateUrl: 'views/newTournament.html',
       controller: 'NewTournamentCtrl',
+      parent: root
+    };
+
+    var game = {
+      name: 'tournaments.alias.games.id',
+      url: '/games/:id',
+      templateUrl: 'views/game.html',
+      controller: 'GameCtrl',
       parent: root
     };
 
@@ -86,7 +102,6 @@ angular.module('iqatournamentsApp', [
       parent: root
     };
 
-
     var createAccount = {
       name: 'createAccount',
       url: 'createAccount',
@@ -105,10 +120,12 @@ angular.module('iqatournamentsApp', [
       .state(tournaments)
       .state(newTournament)
       .state(tournament)
+      .state(tournamentView)
       .state(login)
       .state(teams)
       .state(newTeam)
       .state(team)
+      .state(game)
       .state(createAccount);
 
     RestangularProvider.setBaseUrl(iqatConfig.api);
