@@ -5,20 +5,10 @@ angular.module('iqatournamentsApp')
     return {
       replace: true,
       require: 'ngModel',
+      scope: true,
       restrict: 'A',
       templateUrl: 'scripts/directives/iqatAutocomplete/iqatAutocomplete.html',
       link: function postLink(scope, element, attrs, controller) {
-
-        var searchMethod;
-        if(attrs.autocompleteModel.indexOf('person') !== -1 || attrs.autocompleteModel.indexOf('member') !== -1){
-          searchMethod = Persons.findPersons;
-        }else if(attrs.autocompleteModel.indexOf('team') !== -1){
-          searchMethod = Teams.findTeams;
-        }else{
-          console.error('iqaAutocomplete directive MUST specify what model to search among those allowed.');
-        }
-        console.log(attrs);
-
 
         scope.$watch(attrs.ngModel, function(newValue, oldValue){
           if(newValue !== oldValue){
@@ -31,13 +21,26 @@ angular.module('iqatournamentsApp')
           }
         });
 
-        scope.search = function(searchValue){
+      },
+      controller: function($scope, $attrs){
+        var searchMethod;
+        
+
+        if($attrs.autocompleteModel.indexOf('person') !== -1 || $attrs.autocompleteModel.indexOf('member') !== -1){
+          searchMethod = Persons.findPersons;
+        }else if($attrs.autocompleteModel.indexOf('team') !== -1){
+          searchMethod = Teams.findTeams;
+        }else{
+          console.error('iqaAutocomplete directive MUST specify what model to search among those allowed.');
+        }
+
+        $scope.search = function(searchValue){
+          
           return searchMethod(searchValue).catch(function(){
             banner.warning('The server could not be contacted. Try again later.');
             return [];
           });
         };
-
       }
     };
   });
