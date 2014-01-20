@@ -13,12 +13,18 @@ angular.module('iqatournamentsApp')
 
     $scope.newGame = function(){
       // Open modal for new game
+      console.log($scope.tournament);
       $modal.open({
         templateUrl: 'views/newGame.html',
-        controller: 'NewGameCtrl'
+        controller: 'NewGameCtrl',
+        resolve: {
+          tournament: function(){
+            return $scope.tournament;
+          }
+        },
       }).result.then(function(success){
-        banner.success('Created a game', 3000);
+        banner.success('Created a game' + success, 3000);
       });
-    }
+    };
 
   });

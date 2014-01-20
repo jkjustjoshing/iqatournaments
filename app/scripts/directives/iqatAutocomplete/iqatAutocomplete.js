@@ -31,7 +31,7 @@ angular.module('iqatournamentsApp')
         }else if($attrs.autocompleteModel.indexOf('team') !== -1){
           searchMethod = Teams.findTeams;
         }else{
-          console.error('iqaAutocomplete directive MUST specify what model to search among those allowed.');
+          console.error('iqaAutocomplete directive MUST specify what model to search among those allowed. You entered ' + $attrs.autocompleteModel);
         }
 
         $scope.search = function(searchValue){
