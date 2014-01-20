@@ -1,4 +1,17 @@
-header {
+header.navbar-default.navbar-static-top {
+
+  // background-color: $header-background;
+  // color: $header-text;
+  // border-width: 0;
+
+  // .nav.navbar-nav > li > a:hover, 
+  // .navbar-header > a:hover, 
+  // .nav.navbar-nav > li.dropdown.open > a,
+  // .nav.navbar-nav > li.dropdown.open > a:hover,
+  // .nav.navbar-nav .dropdown-menu {
+  //   color: $placeholder-text;
+  //   background-color: $header-background;
+  // }
 
   .user-nav {
     width: 35%;
@@ -24,7 +37,7 @@ header {
     }
 
   }
-
+  
 
   .banner {
     position: fixed;

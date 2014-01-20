@@ -1,9 +1,13 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
+// Link to color scheme - http://dribbble.com/shots/1382086-Search-type-switch?list=popular&offset=8
+@import 'variables';
+
 @import 'sass-bootstrap/lib/bootstrap';
 
 @import 'tournament';
 @import 'header';
+@import 'modals';
 @import 'forms';
 
 body, .body {
@@ -13,12 +17,24 @@ body, .body {
   min-height: 100%
 }
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+input[type="text"], input[type="password"], input[type="submit"] {
+  border-width: 0;
 }
+
+// button.btn-default {
+//   padding-top: 6px;
+//   padding-bottom: 6px;
+//   background-color: $button-background;
+//   color: $button-text;
+//   border-width: 0;
+//   border-radius: 0;
+
+//   &:hover {
+//     background-color: $dark-button-background;
+//     color: $button-text;
+//   }
+
+// }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -28,46 +44,9 @@ body, .body {
   padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-
-.marketing p + h4 {
-  margin-top: 28px;
 }

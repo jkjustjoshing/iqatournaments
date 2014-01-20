@@ -1,24 +1,27 @@
-<form class="new-form form-horizontal" name="newTournament" ng-submit="submit()">
-  <h2> New Tournament </h2>
+<form class="new-form form-horizontal panel panel-default" name="newTournament" ng-submit="submit()">
+  <div class="panel-heading">
+    <h2 class="panel-title"> New Tournament </h2>
+  </div>
 
-  <div class="form-group">
-    <label>Tournament Name:</label>
-    <input ng-change="generateAlias()" ng-model="inputs.name" />
-  </div>
-  <div class="form-group">
-    <label>Location:</label>
-    <input ng-model="inputs.location" />
-  </div>
-  <div class="form-group">
-    <label>Director (future will be logged-in user):</label>
-    <input ng-model="inputs.director" iqat-autocomplete="enforce" autocomplete-model="person" />
-  </div>
-  <div class="form-group">
-    <label>Date (to be date input):</label>
-    <input type="date" ng-model="inputs.date" />
-  </div>
-  <label>url: http://iqatournaments.com/tournaments/</label><input name="alias" ng-model="inputs.alias" ng-change="aliasManuallyChanged()" ng-blur="aliasBlurred()" iqat-pattern="validAlias"/>
+  <div class="panel-body">
+    <div class="form-group">
+      <label>Tournament Name:</label>
+      <input ng-change="generateAlias()" ng-model="inputs.name" />
+    </div>
+    <div class="form-group">
+      <label>Location:</label>
+      <input ng-model="inputs.location" />
+    </div>
+    <div class="form-group">
+      <label>Director (future will be logged-in user):</label>
+      <input ng-model="inputs.director" iqat-autocomplete="enforce" autocomplete-model="person" />
+    </div>
+    <div class="form-group">
+      <label>Date (to be date input):</label>
+      <input type="date" ng-model="inputs.date" />
+    </div>
+    <label>url: http://iqatournaments.com/tournaments/</label><input name="alias" ng-model="inputs.alias" ng-change="aliasManuallyChanged()" ng-blur="aliasBlurred()" iqat-pattern="validAlias"/>
 
-  <input type="submit" ng-disable="newTournament.id.$pristine || newTournament.id.$dirty && newTournament.id.$invalid" />
-
+    <input type="submit" class="btn btn-primary" ng-disable="newTournament.id.$pristine || newTournament.id.$dirty && newTournament.id.$invalid" />
+  </div>
 </form>

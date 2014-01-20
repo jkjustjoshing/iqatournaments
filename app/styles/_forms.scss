@@ -2,7 +2,7 @@ $break-point: 600px;
 
 form.new-form {
 
-  border: 1px solid black;
+ // border: 1px solid black;
 
   .form-group {
     margin-left: 0;
@@ -29,4 +29,12 @@ form.new-form {
   }
 
 
+}
+
+input[type="text"] {
+  border-width: 1px;
+}
+
+.dropdown-menu > li > a {
+//  color: $header-text;
 }
