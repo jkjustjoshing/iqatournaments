@@ -7,8 +7,7 @@ angular.module('iqatournamentsApp')
 
     $scope.submit = function(){
       console.log(tournament);
-      Tournaments.postGame({
-        tournament: tournament.id,
+      Tournaments.postGame(tournament, {
         pitch: $scope.inputs.pitch,
         teams: [
           $scope.inputs.team1.id,

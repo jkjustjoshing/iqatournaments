@@ -22,7 +22,7 @@
     <div ui-view=""></div>
     <ul>
       <li ng-repeat="game in tournament.games">
-        {{game.teams[0].name}} is playing {{game.teams[1].name}} on pitch {{game.pitch}} with head ref {{game.headReferee.name}}
+        {{game.teams[0].team.name}} is playing {{game.teams[1].team.name}} on pitch {{game.pitch}} with head ref {{game.headReferee.name}}
       </li>
     </ul>
   </div>
