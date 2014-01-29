@@ -1,0 +1,18 @@
+Things to do and other thoughts
+
+Dedicated login route
+  Can either be modal or separate view/page. 
+
+Create account
+  Ability to create an account
+
+Schedule view
+  Arrange all games into schedule view.
+
+Conflicts
+  Compute or just display conflicts.
+  Should be computed for form validation, but could also just get conflict response from backend.
+  At the very least show res
+
+Tests!!!!
+  Unit tests!
